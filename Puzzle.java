@@ -41,6 +41,7 @@ public class Puzzle {
         shuffle();
     }
 
+    //shuffle all the numbers in the 4X4 grid to dynamically assign the numbers for every game
     private void shuffle() {
         Random rand = new Random();
         for (int i = 0; i < 100; i++) {
@@ -54,6 +55,7 @@ public class Puzzle {
         }
     }
 
+    //print the board
     public void display() {
         System.out.println("Current Puzzle State:");
         System.out.println("---------------------");
@@ -73,6 +75,7 @@ public class Puzzle {
         System.out.println(); 
     }
 
+    //move the whitespace to either up or down or left or right. this will move only one step to their surroundings
     public void move(String direction) {
         switch (direction.toLowerCase()) {
             case "u":
@@ -104,6 +107,7 @@ public class Puzzle {
         }
     }
 
+    //swapping the whitespace to left or right or top or down
     private void swap(int row1, int col1, int row2, int col2) {
         int temp = board[row1][col1];
         board[row1][col1] = board[row2][col2];
@@ -114,6 +118,7 @@ public class Puzzle {
         return board;
     }
 
+    //checking all the numbers are correctly positioned and declare whether the player won or not
     public boolean isSolved() {
         int num = 1;
         for (int i = 0; i < SIZE; i++) {

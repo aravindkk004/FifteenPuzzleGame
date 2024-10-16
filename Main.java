@@ -4,6 +4,8 @@ public class Main {
         Puzzle puzzle = new Puzzle();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to 15 puzzle Game!!!");
+
+        //this will execute while the user enters exit 
         while (true) {
             System.out.println("Current Puzzle State:");
             puzzle.display();
@@ -20,7 +22,7 @@ public class Main {
                 System.out.println("Exiting the game.");
                 break; 
             }
-
+            // the whitespace will move based on the user input
             puzzle.move(input);
         }
 
